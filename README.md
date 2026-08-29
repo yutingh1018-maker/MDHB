@@ -51,15 +51,6 @@ The dataset is formatted in standard UTF-8 JSON Lines (`.jsonl`). Each line repr
 }
 ```
 
-```json
-{
-  "id": "0003",
-  "text": "The World Bank's annual Doing Business Report currently puts South Africa number 82 out of 190 countries that they have tracked with regard to being able to do business in an efficient way",
-  "gt_answers": "Normal",
-  "sub_label": ""
-}
-```
-
 ---
 
 ## 🏷️ Fine-Grained Taxonomy Hierarchy
@@ -68,7 +59,7 @@ The dataset is formatted in standard UTF-8 JSON Lines (`.jsonl`). Each line repr
 | :--- | :--- | :--- |
 | **`Fake`**<br>*(Misinformation)* | • `Political Manipulation`<br>• `Health and Pseudoscience`<br>• `Social Emergencies and Fabrications`<br>• `Other Urban Legends` | Fabricated claims, forged policy statements, health pseudoscience, and emergency hoaxes. |
 | **`Toxic`**<br>*(Toxicity)* | • `Threats and Intimidation`<br>• `Incitement to Violence`<br>• `Racial Discrimination`<br>• `Inferiority Language`<br>• `Stereotypes` | Implicit hate speech, targeted intimidation, racial animus, and identity-based derogation. |
-| **`Sarcastic`**<br>*(Sarcasm)* | • `harmful-sarcasm` *(Offensive Sarcasm)*<br>• `harmless-sarcasm` *(Non-Offensive Sarcasm)*<br>• `self-depretating-sarcasm` | Pragmatic irony and mockery; includes harmless venting/self-deprecation as **hard negatives**. |
+| **`Sarcastic`**<br>*(Sarcasm)* | • `harmful-sarcasm` *(Offensive Sarcasm)*<br>• `harmless-sarcasm` *(Non-Offensive Sarcasm)*<br>• `self-depretating-sarcasm` | Pragmatic irony and mockery; includes harmless venting/self-deprecation. |
 | **`Logical_Fallacy`**<br>*(Logical Fallacies)* | • `slippery slope`<br>• `false dilemma`<br>• `hasty generalization`<br>• `appeal to worse problems`<br>• `appeal to authority`<br>• `appeal to majority`<br>• `appeal to nature`<br>• `appeal to tradition` | Structurally flawed or misleading arguments diverting discourse from valid reasoning. |
 | **`Normal`**<br>*(Benign Control)* | • `""` *(Empty string)* | Safe everyday social discourse, factual neutral comments, and benign conversation. |
 
