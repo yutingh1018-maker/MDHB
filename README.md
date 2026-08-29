@@ -65,7 +65,7 @@ Download the formal agreement template from this repository:
 
 ### Step 3: Send Application Email
 Send the signed agreement (scanned PDF or clear photo) to the dataset management team:
-- **Recipient Email**: `[Contact Email: e.g., your_email@domain.edu / corresponding_author@domain.edu]`
+- **Recipient Email**: `yutingh1018@gmail.com`
 - **Email Subject**: `[MDHB Dataset Application] - <Your Name> - <Your Affiliation>`
 - **Email Body Template**:
   ```text
