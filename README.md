@@ -24,8 +24,8 @@ The benchmark is organized into two standardized JSON Lines (`.jsonl`) files:
 
 | Split | File Name | Total Samples | Category Breakdown (Balanced) | Description |
 | :--- | :--- | :---: | :--- | :--- |
-| **Validation** | `Val.jsonl` | **1,250** | 250 samples per category (1:1:1:1:1) | For prompt engineering, hyperparameter tuning & validation |
-| **Test** | `Test.jsonl` | **6,250** | ~1,250 samples per category (balanced) | For primary benchmark evaluation and model testing |
+| **Validation** | `Val.jsonl` | **1,250** | 250 samples per category | For prompt engineering, hyperparameter tuning & validation |
+| **Test** | `Test.jsonl` | **6,250** | 1,250 samples per category | For primary benchmark evaluation and model testing |
 | **Total** | | **7,500** | 1,500 samples per top-level category | Full MDHB benchmark suite |
 
 ---
