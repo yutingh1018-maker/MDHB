@@ -6,7 +6,7 @@ Official repository for the EMNLP 2026 paper:
 [![Conference](https://img.shields.io/badge/EMNLP-2026-blue.svg)](https://2026.emnlp.org/)
 [![License](https://img.shields.io/badge/License-Academic%20DUA-red.svg)](#-data-access-policy--ethical-statement)
 [![Access](https://img.shields.io/badge/Data%20Access-Controlled%20Application-orange.svg)](#-how-to-apply-for-data-access)
-[![Dataset](https://img.shields.io/badge/Instances-7%2C500-green.svg)](#-benchmark-overview)
+[![Dataset](https://img.shields.io/badge/Instances-7%2C500-green.svg)](#-dataset-overview--statistics)
 
 ---
 
@@ -18,103 +18,29 @@ To address these challenges, we introduce **MDHB (Multi-Dimensional Online Harm 
 
 ---
 
-## 🔒 Data Access Policy & Ethical Statement (受控访问策略与伦理声明)
+## 📊 Dataset Overview & Statistics
 
-> ### ⚠️ Important Notice / 重要声明
-> **English**: Given that MDHB contains real-world instances of online harms, misinformation, offensive language, and covert malicious content, releasing the raw dataset unconditionally to an open public repository presents substantial risks of data abuse, toxic model fine-tuning, and secondary dissemination of harmful content.  
-> Therefore, we adopt a **Controlled Access Release Policy**. The dataset is **NOT directly hosted in this public repository**. Access is strictly limited to non-commercial academic research and defensive safety alignment, subject to formal identity verification and a signed **Data Usage Agreement (DUA)**.
-> 
-> **中文说明**：鉴于 MDHB 包含网络有害言论、虚假信息及其他潜在有害内容，将其无条件公开发布至公开平台可能带来数据滥用和有害内容二次传播的风险。因此，我们采用**数据集受控访问（Controlled Access）**策略：原始数据不会直接公开托管在开放仓库中。申请人需下载并签署《数据使用许可协议》，经作者团队核验申请人学术身份与研究用途后，通过邮件单独发放私有下载链接。
+The benchmark is organized into two standardized JSON Lines (`.jsonl`) files:
 
----
-
-## 📝 How to Apply for Data Access (数据集申请流程)
-
-获取 MDHB 数据集访问权限，请按以下 4 个步骤进行申请：
-
-```
-┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐
-│ 1. Download Agreement   │ ──> │ 2. Fill & Sign DUA      │ ──> │ 3. Email Application    │ ──> │ 4. Receive Secure Link  │
-│ (PDF / Word in repo)    │     │ (Institutional Info)    │     │ (Attach Signed DUA)     │     │ (Within 2-3 Workdays)   │
-└─────────────────────────┘     └─────────────────────────┘     └─────────────────────────┘     └─────────────────────────┘
-```
-
-### Step 1: Download the Data Usage Agreement (下载协议)
-请下载本仓库中的正式协议模板：
-- 📄 **PDF Version**: [`MDHB_Data_Usage_Agreement.pdf`](./MDHB_Data_Usage_Agreement.pdf)
-- 📝 **Word Version**: [`MDHB_Data_Usage_Agreement.docx`](./MDHB_Data_Usage_Agreement.docx)
-- 📋 **Markdown Preview**: [`DATA_USAGE_AGREEMENT.md`](./DATA_USAGE_AGREEMENT.md)
-
-### Step 2: Fill in Applicant Information & Sign (填写信息并签署)
-请完整填写协议最后一页的信息表：
-- **申请者姓名（Requester's Name）**
-- **申请者机构邮箱（Institutional Email）**：建议使用高校或科研院所官方邮箱（如 `@*.edu.cn`、`@university.edu`）
-- **职位（Position/Title）**：教师、博士后、博士生、硕士生、科研人员等
-- **项目负责人/导师姓名及邮箱（PI / Supervisor's Name & Email）**
-- **所属机构与实验室（Affiliation & Department）**
-- **具体研究用途说明（Detailed Research Purpose）**：简要说明拟开展的学术课题
-- **手写或电子签名（Signature）及日期（Date）**
-
-### Step 3: Send Application Email (发送申请邮件)
-将签署后的协议（扫描件/清晰照片/PDF）发送至数据集管理团队邮箱：
-- **收件邮箱**：`yutingh1018@gmail.com`
-- **邮件主题**：`[MDHB Dataset Application] - <申请者姓名> - <所在机构>`
-- **邮件正文模板（可直接复制）**：
-  ```text
-  Dear MDHB Dataset Team,
-
-  I am writing to formally request access to the MDHB (Multi-Dimensional Online Harm Detection Benchmark) dataset for non-commercial academic research.
-
-  - Applicant Name: [Your Name / 姓名]
-  - Affiliation: [Your University / 所在高校或机构]
-  - Position: [Faculty / Ph.D. Candidate / Master's Student]
-  - Supervisor / PI: [Supervisor's Name and Email / 导师姓名及邮箱]
-  - Research Topic: [Briefly describe your project / 研究课题]
-
-  I have read, understood, and agreed to all terms in the MDHB Data Usage Agreement. Please find my signed agreement attached.
-
-  Thank you for your time and consideration.
-
-  Sincerely,
-  [Your Name]
-  [Your Institutional Email Address]
-  ```
-
-### Step 4: Verification & Link Delivery (审核与链接发放)
-- 团队将在 **2–3 个工作日** 内完成学术身份与用途核验。
-- 审核通过后，私有下载链接（百度网盘 / Google Drive / OneDrive 提取码）将直接发送至您的机构邮箱。
+| Split | File Name | Total Samples | Category Breakdown (Balanced) | Description |
+| :--- | :--- | :---: | :--- | :--- |
+| **Validation** | `Val.jsonl` | **1,250** | 250 samples per category (1:1:1:1:1) | For prompt engineering, hyperparameter tuning & validation |
+| **Test** | `Test.jsonl` | **6,250** | ~1,250 samples per category (balanced) | For primary benchmark evaluation and model testing |
+| **Total** | | **7,500** | 1,500 samples per top-level category | Full MDHB benchmark suite |
 
 ---
 
-## 📊 Dataset Schema & Format (数据格式说明)
+## 📂 Data Format & Schema Specification
 
-数据集采用标准 UTF-8 JSON Lines (`.jsonl`) 格式组织，分为验证集 (`Val.jsonl`, 1,250条) 和测试集 (`Test.jsonl`, 6,250条)，共计 **7,500** 条样本。每行包含以下结构化字段：
+The dataset is formatted in standard UTF-8 JSON Lines (`.jsonl`). Each line represents a self-contained JSON object containing the following keys:
 
 ### Field Definitions
-- `id` (`string`): 样本唯一编号（如 `"0001"`, `"0124"`）。
-- `text` (`string`): 待分类的社交媒体原始文本内容。
-- `gt_answers` (`string`): 真实一级危害分类标签（`"Normal"`, `"Toxic"`, `"Sarcastic"`, `"Logical_Fallacy"`, `"Fake"`）。
-- `sub_label` (`string`): 细粒度子类别 / 具体危害类型（`"Normal"` 对应为空字符串 `""`）。
+- `id` (`string`): Unique four-digit instance identifier (e.g., `"0001"`, `"0124"`).
+- `text` (`string`): The raw text of the social media instance to be evaluated.
+- `gt_answers` (`string`): Ground-truth top-level harm classification label (`"Normal"`, `"Toxic"`, `"Sarcastic"`, `"Logical_Fallacy"`, `"Fake"`).
+- `sub_label` (`string`): Fine-grained sub-category or specific harm type (empty string `""` for `"Normal"` instances).
 
-### JSON Examples
-
-```json
-{
-  "id": "0001",
-  "text": "Because the soundbite \"survival of the fittest\" was coined to explain evolution to the stupid masses.",
-  "gt_answers": "Sarcastic",
-  "sub_label": "harmful-sarcasm"
-}
-```
-
-```json
-{
-  "id": "0004",
-  "text": "white people are the only people hate crime laws are suppose to apply to . any hate crime committed by any other race likely had jewish victims . only way for them to make the list .",
-  "gt_answers": "Toxic",
-  "sub_label": "Racial Discrimination"
-}
-```
+### JSON Schema Examples
 
 ```json
 {
@@ -125,21 +51,97 @@ To address these challenges, we introduce **MDHB (Multi-Dimensional Online Harm 
 }
 ```
 
-### Taxonomy Hierarchy & Sub-label Mapping
+```json
+{
+  "id": "0003",
+  "text": "The World Bank's annual Doing Business Report currently puts South Africa number 82 out of 190 countries that they have tracked with regard to being able to do business in an efficient way",
+  "gt_answers": "Normal",
+  "sub_label": ""
+}
+```
+
+---
+
+## 🏷️ Fine-Grained Taxonomy Hierarchy
 
 | Top-Level Label (`gt_answers`) | Fine-Grained Sub-Categories (`sub_label`) | Description |
 | :--- | :--- | :--- |
-| **`Fake`**<br>*(Misinformation)* | • `Political Manipulation`<br>• `Health and Pseudoscience`<br>• `Social Emergencies and Fabrications`<br>• `Other Urban Legends` | 政治操弄、健康与伪科学谣言、突发社会事件捏造及都市传说。 |
-| **`Toxic`**<br>*(Toxicity)* | • `Threats and Intimidation`<br>• `Incitement to Violence`<br>• `Racial Discrimination`<br>• `Inferiority Language`<br>• `Stereotypes` | 隐蔽仇恨言论、暴力煽动、种族歧视、贬损性语言与刻板印象。 |
-| **`Sarcastic`**<br>*(Sarcasm)* | • `harmful-sarcasm` *(Offensive Sarcasm)*<br>• `harmless-sarcasm` *(Non-Offensive Sarcasm)*<br>• `self-depretating-sarcasm` | 包含作为**硬负样本（Hard Negative）**的非冒犯性自嘲与日常吐槽。 |
-| **`Logical_Fallacy`**<br>*(Logical Fallacy)* | • `slippery slope`<br>• `false dilemma`<br>• `hasty generalization`<br>• `appeal to worse problems`<br>• `appeal to authority`<br>• `appeal to majority`<br>• `appeal to nature`<br>• `appeal to tradition` | 破坏论证有效性的结构性逻辑断裂与转移焦点的煽动性修辞。 |
-| **`Normal`**<br>*(Benign Control)* | • `""` *(Empty string)* | 日常中性社交文本、事实性客观陈述及安全对话。 |
+| **`Fake`**<br>*(Misinformation)* | • `Political Manipulation`<br>• `Health and Pseudoscience`<br>• `Social Emergencies and Fabrications`<br>• `Other Urban Legends` | Fabricated claims, forged policy statements, health pseudoscience, and emergency hoaxes. |
+| **`Toxic`**<br>*(Toxicity)* | • `Threats and Intimidation`<br>• `Incitement to Violence`<br>• `Racial Discrimination`<br>• `Inferiority Language`<br>• `Stereotypes` | Implicit hate speech, targeted intimidation, racial animus, and identity-based derogation. |
+| **`Sarcastic`**<br>*(Sarcasm)* | • `harmful-sarcasm` *(Offensive Sarcasm)*<br>• `harmless-sarcasm` *(Non-Offensive Sarcasm)*<br>• `self-depretating-sarcasm` | Pragmatic irony and mockery; includes harmless venting/self-deprecation as **hard negatives**. |
+| **`Logical_Fallacy`**<br>*(Logical Fallacies)* | • `slippery slope`<br>• `false dilemma`<br>• `hasty generalization`<br>• `appeal to worse problems`<br>• `appeal to authority`<br>• `appeal to majority`<br>• `appeal to nature`<br>• `appeal to tradition` | Structurally flawed or misleading arguments diverting discourse from valid reasoning. |
+| **`Normal`**<br>*(Benign Control)* | • `""` *(Empty string)* | Safe everyday social discourse, factual neutral comments, and benign conversation. |
+
+---
+
+## 🔒 Data Access Policy & Ethical Statement
+
+> ### ⚠️ Important Notice
+> Given that MDHB contains real-world instances of online harms, misinformation, offensive language, and covert malicious content, releasing the raw dataset unconditionally to an open public repository presents substantial risks of data abuse, toxic model fine-tuning, and secondary dissemination of harmful content.  
+> Therefore, we adopt a **Controlled Access Release Policy**. The dataset is **NOT directly hosted in this public repository**. Access is strictly limited to non-commercial academic research and defensive safety alignment, subject to formal identity verification and a signed **Data Usage Agreement (DUA)**.
+
+---
+
+## 📝 How to Apply for Data Access
+
+To obtain access to the MDHB benchmark, please follow the steps below:
+
+```
+┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐     ┌─────────────────────────┐
+│ 1. Download Agreement   │ ──> │ 2. Fill & Sign DUA      │ ──> │ 3. Email Application    │ ──> │ 4. Receive Secure Link  │
+│ (PDF in repository)     │     │ (Institutional Info)    │     │ (Attach Signed DUA)     │     │ (Within 2-3 Workdays)   │
+└─────────────────────────┘     └─────────────────────────┘     └─────────────────────────┘     └─────────────────────────┘
+```
+
+### Step 1: Download the Data Usage Agreement
+Download the formal agreement template from this repository:
+- 📄 **PDF Version**: [`MDHB_Data_Usage_Agreement.pdf`](./MDHB_Data_Usage_Agreement.pdf)
+
+### Step 2: Fill in Applicant Information & Sign
+Please complete all required fields on the last page of the agreement:
+- **Requester's Name**
+- **Requester's Institutional Email** (prefer official `.edu` / university / research institute domain)
+- **Position / Title** (Faculty, Postdoc, Ph.D. Student, Graduate Student, Researcher)
+- **PI / Supervisor's Name & Email**
+- **Affiliation & Department / Laboratory**
+- **Detailed Research Purpose Description** (brief description of your academic research project)
+- **Handwritten or Verified Digital Signature & Date**
+
+### Step 3: Send Application Email
+Send the signed agreement (scanned PDF or clear photo) to the dataset management team:
+- **Recipient Email**: `yutingh1018@gmail.com`
+- **Email Subject**: `[MDHB Dataset Application] - <Your Name> - <Your Affiliation>`
+- **Email Body Template**:
+  ```text
+  Dear MDHB Dataset Team,
+
+  I am writing to formally request access to the MDHB (Multi-Dimensional Online Harm Detection Benchmark) dataset for non-commercial academic research.
+
+  - Applicant Name: [Your Name]
+  - Affiliation: [Your University / Research Institution]
+  - Position: [Faculty / Postdoc / Ph.D. Candidate / Master's Student]
+  - Supervisor / PI: [Supervisor's Name and Email]
+  - Research Topic: [Briefly describe your project, e.g., LLM Safety Alignment / Implicit Harm Detection]
+
+  I have read, understood, and agreed to all terms in the MDHB Data Usage Agreement. Please find my signed agreement attached.
+
+  Thank you for your time and consideration.
+
+  Sincerely,
+  [Your Name]
+  [Your Institutional Email Address]
+  ```
+
+### Step 4: Verification & Link Delivery
+- Applications will be reviewed within **2–3 business days**.
+- Applications using commercial personal emails (e.g., `@163.com`, `@qq.com`, `@gmail.com` without verifiable institutional identity) or missing required information may be rejected.
+- Upon successful verification, a private download link (Google Drive / Baidu Netdisk) with access credentials will be dispatched to your institutional email.
 
 ---
 
 ## 📜 Citation
 
-如在研究中使用了 MDHB 数据集或参考了本论文方法，请引用我们的 EMNLP 2026 论文：
+If you use the MDHB dataset or refer to our benchmark and framework in your research, please cite our EMNLP 2026 paper:
 
 ```bibtex
 @inproceedings{mdhb2026srs,
