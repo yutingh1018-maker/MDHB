@@ -66,4 +66,4 @@ The authors reserve the absolute right to terminate your access to the dataset a
 | **Date / 签署日期** | ________ 年 ____ 月 ____ 日 (YYYY-MM-DD) |
 
 ---
-*Please send the scanned copy of this signed agreement to: `[Designated Contact Email]` with subject `[MDHB Dataset Application] - <Your Name> - <Your Affiliation>`.*
+*Please send the scanned copy of this signed agreement to: `yutingh1018@gmail.com` with subject `[MDHB Dataset Application] - <Your Name> - <Your Affiliation>`.*
