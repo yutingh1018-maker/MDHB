@@ -12,7 +12,7 @@ Official repository for the EMNLP 2026 paper:
 
 ## 📖 Benchmark Overview
 
-Online harm detection is a critical cornerstone of trustworthy AI and content safety governance. However, existing benchmarks primarily focus on isolated single-task violations or explicit lexical insults, leaving models vulnerable to covert, multi-dimensional, and structurally intricate threats.
+Online harm detection is crucial for safeguarding digital ecosystems. However, existing benchmarks primarily focus on isolated single-task violations or explicit lexical insults, leaving models vulnerable to covert, multi-dimensional, and structurally intricate threats.
 
 To address these challenges, we introduce **MDHB (Multi-Dimensional Online Harm Detection Benchmark)**, comprising **7,500** standardized high-quality textual instances spanning four core harm dimensions alongside a benign control group. Constructed through real-world social media corpora curation, LLM-assisted reconstruction, and multi-round human verification, MDHB provides a rigorous benchmark for evaluating structured semantic reasoning and safe alignment in LLMs.
 
