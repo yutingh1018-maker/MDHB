@@ -50,8 +50,6 @@ To obtain access to the MDHB benchmark, please follow the steps below:
 ### Step 1: Download the Data Usage Agreement
 Download the formal agreement template from this repository:
 - 📄 **PDF Version**: [`MDHB_Data_Usage_Agreement.pdf`](./MDHB_Data_Usage_Agreement.pdf)
-- 📝 **Word Version**: [`MDHB_Data_Usage_Agreement.docx`](./MDHB_Data_Usage_Agreement.docx)
-- 📋 **Markdown Preview**: [`DATA_USAGE_AGREEMENT.md`](./DATA_USAGE_AGREEMENT.md)
 
 ### Step 2: Fill in Applicant Information & Sign
 - Please complete all required fields on the last page of the agreement:
